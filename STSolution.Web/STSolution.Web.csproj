@@ -25,4 +25,8 @@
       <ProjectReference Include="..\STSolution.Data\STSolution.Data.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations" />
+    </ItemGroup>
+
 </Project>

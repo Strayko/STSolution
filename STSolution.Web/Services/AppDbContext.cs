@@ -25,12 +25,12 @@ namespace STSolution.Web.Services
         {
             base.OnModelCreating(modelBuilder);
 
-            //seed categories
+            //Seed categories
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Java" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "ASP.NET" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "PHP" });
 
-            //seed blogs
+            //Seed blogs
             modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 BlogId = 1,
