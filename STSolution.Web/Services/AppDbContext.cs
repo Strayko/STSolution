@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using STSolution.Data.Models;
@@ -28,7 +29,6 @@ namespace STSolution.Web.Services
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Java" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "ASP.NET" });
             modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "PHP" });
-
 
             //seed blogs
             modelBuilder.Entity<Blog>().HasData(new Blog

@@ -14,7 +14,6 @@ using Microsoft.Extensions.Hosting;
 using STSolution.Data;
 using STSolution.Data.Repository;
 using STSolution.Data.Repository.IRepository;
-using STSolution.Web.Areas.Identity.Data;
 using STSolution.Web.Repository;
 using STSolution.Web.Services;
 

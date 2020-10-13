@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using STSolution.Web.Areas.Identity.Data;
+using STSolution.Web.Services;
 
 [assembly: HostingStartup(typeof(STSolution.Web.Areas.Identity.IdentityHostingStartup))]
 namespace STSolution.Web.Areas.Identity
@@ -15,12 +15,12 @@ namespace STSolution.Web.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<IdentityDataContext>(options =>
+                services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("IdentityDataContextConnection")));
 
                 services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                    .AddEntityFrameworkStores<IdentityDataContext>();
+                    .AddEntityFrameworkStores<AppDbContext>();
             });
         }
     }

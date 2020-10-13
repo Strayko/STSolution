@@ -2,7 +2,7 @@
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
 
-namespace STSolution.Data.MockRepository
+namespace STSolution.Web.MockRepository
 {
     public class MockCategoryRepository : ICategoryRepository
     {
