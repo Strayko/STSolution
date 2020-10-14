@@ -36,14 +36,14 @@ namespace STSolution.Web
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            
+
             services.AddRouting(options => options.LowercaseUrls = true);
 
             services.AddScoped<IBlogRepository, BlogRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<IAppDbContext, AppDbContext>();
 
-            services.AddDefaultIdentity<IdentityUser>(options =>
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
                     options.SignIn.RequireConfirmedEmail = false;
                     options.Password.RequireDigit = false;
@@ -53,8 +53,11 @@ namespace STSolution.Web
                     options.Password.RequiredLength = 4;
                     options.Password.RequiredUniqueChars = 0;
                 })
+                .AddDefaultTokenProviders()
+                .AddDefaultUI()
                 .AddEntityFrameworkStores<AppDbContext>();
-                
+
+            services.AddScoped<IDbInitializer, DbInitializer>();
 
             services.AddHttpContextAccessor();
             services.AddSession();
@@ -63,7 +66,7 @@ namespace STSolution.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -72,6 +75,7 @@ namespace STSolution.Web
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            dbInitializer.Initialize();
 
             app.UseRouting();
             app.UseAuthentication();

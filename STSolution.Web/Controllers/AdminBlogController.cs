@@ -1,10 +1,12 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
 
 namespace STSolution.Web.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class AdminBlogController : Controller
     {
         private readonly IBlogRepository _blogRepository;

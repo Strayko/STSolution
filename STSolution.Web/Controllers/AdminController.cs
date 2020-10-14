@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace STSolution.Web.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class AdminController : Controller
     {
         public IActionResult Index()
