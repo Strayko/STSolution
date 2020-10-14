@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
+using STSolution.Web.Repository.IRepository;
 using STSolution.Web.Services;
 
 namespace STSolution.Web.Repository

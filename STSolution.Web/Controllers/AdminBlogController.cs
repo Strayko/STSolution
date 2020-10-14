@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
+using STSolution.Web.Repository.IRepository;
 
 namespace STSolution.Web.Controllers
 {

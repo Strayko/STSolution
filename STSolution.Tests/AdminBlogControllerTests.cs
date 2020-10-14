@@ -4,6 +4,7 @@ using NUnit.Framework;
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
 using STSolution.Web.Controllers;
+using STSolution.Web.Repository.IRepository;
 
 namespace STSolution.Tests
 {

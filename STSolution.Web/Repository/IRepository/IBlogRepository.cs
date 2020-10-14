@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using STSolution.Data.Models;
 
-namespace STSolution.Data.Repository.IRepository
+namespace STSolution.Web.Repository.IRepository
 {
     public interface IBlogRepository
     {

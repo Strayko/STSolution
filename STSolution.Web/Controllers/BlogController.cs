@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using STSolution.Data.Repository.IRepository;
 using STSolution.Data.ViewModels;
+using STSolution.Web.Repository.IRepository;
 
 namespace STSolution.Web.Controllers
 {

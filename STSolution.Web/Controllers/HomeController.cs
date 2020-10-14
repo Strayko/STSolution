@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using STSolution.Data.Repository.IRepository;
+using STSolution.Web.Repository.IRepository;
 
 namespace STSolution.Web.Controllers
 {

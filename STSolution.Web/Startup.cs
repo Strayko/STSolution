@@ -17,6 +17,7 @@ using STSolution.Data.Repository;
 using STSolution.Data.Repository.IRepository;
 using STSolution.Web.Initializer;
 using STSolution.Web.Repository;
+using STSolution.Web.Repository.IRepository;
 using STSolution.Web.Services;
 
 namespace STSolution.Web
@@ -62,7 +63,9 @@ namespace STSolution.Web
             services.AddHttpContextAccessor();
             services.AddSession();
             services.AddRazorPages();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

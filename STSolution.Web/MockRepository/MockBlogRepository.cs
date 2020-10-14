@@ -2,6 +2,7 @@
 using System.Linq;
 using STSolution.Data.Models;
 using STSolution.Data.Repository.IRepository;
+using STSolution.Web.Repository.IRepository;
 
 namespace STSolution.Web.MockRepository
 {
